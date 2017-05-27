@@ -13,6 +13,7 @@
     "style-loader": "^0.18.1",
     "vue": "^2.2.1",
     "vue-router": "^2.5.3",
+    "vuejs-datepicker": "^0.7.12",
     "vuestrap": "^1.0.3",
     "vuex": "^2.3.1"
   },

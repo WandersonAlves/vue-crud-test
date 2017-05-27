@@ -14,7 +14,12 @@
 <script>
   export default {
     name: 'Badge',
-    props: ['counter'],
+    props: {
+      counter: {
+        type: Number,
+        required: true
+      }
+    },
     data() {
       return {
         info: ''

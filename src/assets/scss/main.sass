@@ -3,8 +3,12 @@
 @import "variables"
 @import "mixins"
 
+$primary: grey
+
 // Load bulma framework
 @import "~bulma/bulma"
+
+
 
 // Apply mixins
 .nav
@@ -13,3 +17,8 @@
 .nav-item a,
 a.nav-item
   +nav-item-a-color
+
+.label
+  color: #363636 !important
+  font-size: 0.8rem
+  padding-top: 6px
