@@ -1,0 +1,15 @@
+@charset "utf-8"
+
+@import "variables"
+@import "mixins"
+
+// Load bulma framework
+@import "~bulma/bulma"
+
+// Apply mixins
+.nav
+  +nav-mixin
+
+.nav-item a,
+a.nav-item
+  +nav-item-a-color
