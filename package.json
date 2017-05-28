@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bulma": "^0.4.1",
+    "express": "^4.15.3",
     "lodash": "^4.17.4",
     "style-loader": "^0.18.1",
     "vue": "^2.2.1",
