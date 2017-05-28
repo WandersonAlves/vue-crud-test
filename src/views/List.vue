@@ -33,7 +33,8 @@ export default {
         },
         {
           title: 'Status',
-          field: 'status'
+          field: 'status',
+          tag: true
         },
         {
           title: 'Colaborador',

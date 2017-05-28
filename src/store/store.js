@@ -41,8 +41,11 @@ const state = {
 
 const mutations = {
   ADD_MOVIMENTACOES (state, movimentacao) {
+    let textArray = ['Nova', 'Reprovada', 'Pendente Aprovação'];
+    let randomIndex = Math.floor(Math.random()*textArray.length);
+
     movimentacao.id = `MP ${state.index}/2017`;
-    movimentacao.status = 'Novo';
+    movimentacao.status = textArray[randomIndex];
     state.movimentacoes.push(movimentacao);
   },
   INCREMENT (state) {
@@ -72,7 +75,8 @@ const getters = {
         status: value.status,
         colaborador: value.contratacaoFormularioModel.nome,
         dataCriacao: value.contratacaoFormularioModel.dataAdmissao,
-        solicitante: solicitante
+        solicitante: solicitante,
+        showProgress: false
       });
     });
     return movimentacoes;

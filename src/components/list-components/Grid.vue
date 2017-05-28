@@ -14,11 +14,13 @@ td {
 td:first-child {
   font-weight: bold !important;
 }
-td:nth-child(3) {
-
+.tag.is-info {
+  background-color: #779bcc;
 }
 </style>
 <script>
+import SolicitationProgress from './SolicitationProgress.vue';
+
 export default {
   name: 'Grid',
   props: {
@@ -37,6 +39,9 @@ export default {
   methods: {
     expandItem() {
     }
+  },
+  components: {
+    SolicitationProgress
   }
 }
 </script>
@@ -56,11 +61,19 @@ export default {
   <tfoot>
     <tr v-for="row in tableData">
         <td v-for="header in tableHeader">
-            {{row[header.field]}}
+            <span v-bind:class="{'tag': header.tag, 'is-success': row.status === 'Nova',
+                                'is-warning': row.status === 'Reprovada', 'is-info': row.status === 'Pendente Aprovação'}">
+                {{row[header.field]}}
+            </span>
         </td>
         <td>
-          <span class="icon"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></span>
+          <span class="icon">
+            <i class="fa" aria-hidden="true"
+               @click="row.showProgress = !row.showProgress"
+               v-bind:class="{'fa-arrow-circle-up': row.showProgress, 'fa-arrow-circle-down': !row.showProgress}"></i>
+          </span>
         </td>
+          <solicitation-progress :step="1" v-if="row.showProgress"></solicitation-progress>
     </tr>
   </tfoot>
 </table>
