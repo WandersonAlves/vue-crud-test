@@ -130,3 +130,24 @@ export const dataModels = {
     pessoa: null
   }
 };
+
+export const searchOptions = {
+  tipoOptions: [{
+      text: 'Opção 1',
+      value: 1
+    },
+    {
+      text: 'Opção 2',
+      value: 2
+    }
+  ],
+  statusOptions: [{
+      text: 'Opção 1',
+      value: 1
+    },
+    {
+      text: 'Opção 2',
+      value: 2
+    }
+  ]
+}
