@@ -21,6 +21,20 @@
     font-style: italic;
 }
 
+.exit-show {
+  background-color: white;
+  z-index: 99999;
+  position: absolute;
+  padding: 10px;
+  height: 44px;
+  width: 91px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.48);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.48);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.48);
+  left: 94%;
+  cursor: pointer;
+}
+
 .white {
     color: white;
 }
@@ -73,7 +87,7 @@
                     <i class="fa fa-bell-o font-size" aria-hidden="true"><badge :counter="notifications"></badge></i>
                 </span>
             </a>
-            <a class="nav-item" v-on:click="caretDown=!caretDown">
+            <a class="nav-item" v-on:click="caretDown=!caretDown; showExit=!showExit">
                 <span class="icon padding-right">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
@@ -84,9 +98,6 @@
                     <i class="fa fa-caret-down" v-bind:class="{'fa-caret-down': caretDown, 'fa-caret-up': !caretDown}" aria-hidden="true"></i>
                 </span>
             </a>
-            <div class="user-menu">
-
-            </div>
         </div>
     </nav>
     <div class="sidebar" v-if="showSidebar">
@@ -95,6 +106,13 @@
             <li><router-link :to="{ name: 'create'}">Movimentação de Pessoal</router-link></li>
             <li><a>Relatórios</a></li>
         </ul>
+    </div>
+    <div class="exit-show" v-if="showExit">
+      <ul>
+        <li @click="showExit=!showExit">
+          Sair
+        </li>
+      </ul>
     </div>
 </div>
 </template>
@@ -112,12 +130,8 @@ export default {
         return {
             caretRight: true,
             caretDown: true,
-            showSidebar: false
-        }
-    },
-    methods: {
-        changeClass() {
-
+            showSidebar: false,
+            showExit: false
         }
     }
 }
