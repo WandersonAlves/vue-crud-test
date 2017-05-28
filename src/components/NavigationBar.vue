@@ -81,7 +81,7 @@
                  </span>
             </a>
         </div>
-        <div class="nav-right nav-menu">
+        <div class="nav-right">
             <a class="nav-item">
                 <span class="icon">
                     <i class="fa fa-bell-o font-size" aria-hidden="true"><badge :counter="notifications"></badge></i>

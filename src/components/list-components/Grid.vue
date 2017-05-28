@@ -17,6 +17,12 @@ td:first-child {
 .tag.is-info {
   background-color: #779bcc;
 }
+.table>thead>tr>th {
+    white-space: nowrap;
+}
+.overflow {
+  overflow: auto;
+}
 </style>
 <script>
 import SolicitationProgress from './SolicitationProgress.vue';
@@ -46,11 +52,11 @@ export default {
 }
 </script>
 <template>
-<div class="content-area">
+<div class="content-area overflow">
 <table class="table is-striped">
   <thead>
     <tr>
-      <th v-for="header in tableHeader">
+      <th class="is-3" v-for="header in tableHeader">
         {{header.title}}
       </th>
       <th>
