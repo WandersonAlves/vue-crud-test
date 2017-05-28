@@ -28,6 +28,7 @@
 }
 .half-area {
     width: 50%;
+    min-width: 50%;
 }
 </style>
 
@@ -46,6 +47,12 @@
                  :cargoOptions="formOptions.cargoOptions"
                  :gerenciaOptions="formOptions.gerenciaOptions">
     </hiring-info>
+    <hiring-info-two :contratacaoTwoModel="dataModels.contratacaoTwoModel"
+                     :SectionInfo="'Contratação'"
+                     :motivoSubstituicaoOptions="formOptions.motivoSubstituicaoOptions"
+                     :regimeTrabalhoOptions="formOptions.regimeTrabalhoOptions"
+                     :cargaHorariaOptions="formOptions.cargaHorariaOptions">
+    </hiring-info-two>
 
 </div>
 </template>
@@ -54,6 +61,7 @@
 import NavigationBar from '../components/NavigationBar.vue';
 import BasicInfo from '../components/create-components/BasicInfo.vue';
 import HiringInfo from '../components/create-components/HiringInfo.vue';
+import HiringInfoTwo from '../components/create-components/HiringInfoTwo.vue';
 import { addMovimentacao } from '../store/actions';
 import { formOptions } from '../store/constants';
 import { dataModels } from '../store/constants';
@@ -64,7 +72,8 @@ export default {
     components: {
         NavigationBar,
         BasicInfo,
-        HiringInfo
+        HiringInfo,
+        HiringInfoTwo
     },
     data() {
         return {

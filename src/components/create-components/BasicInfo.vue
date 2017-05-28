@@ -55,7 +55,7 @@ export default {
                         <form id="basic-form" class="padding-top-25">
                             <div class="field">
                                 <label class="label">Tipo do Formulário:</label>
-                                <p class="control">
+                                <p class="control half-area">
                                     <span class="select">
                                       <select v-model="tipoFormularioModel.tipoFormulario">
                                           <option v-for="option in tipoFormularioOptions" v-bind:value="option.value">
@@ -67,7 +67,7 @@ export default {
                             </div>
                             <div class="field">
                                 <label class="label">Data de movimentação:</label>
-                                <p class="control has-icons-right">
+                                <p class="control has-icons-right half-area">
                                     <datepicker v-model="tipoFormularioModel.dataMovimentacao"
                                                 :format="'dd/MM/yyyy'"
                                                 :required="true"
