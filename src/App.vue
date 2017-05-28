@@ -6,16 +6,13 @@
     padding: 40px;
     background-color: #eff3f6;
 }
-
 .form-header {
     color: gray;
 }
-
 .header-border {
     border-bottom: 1px solid gray;
     margin-bottom: 10px;
 }
-
 .margin-zero {
     margin: 0px;
 }
@@ -30,6 +27,10 @@
 }
 .uppercase {
   text-transform: uppercase;
+}
+.required::after {
+  content: " *";
+  color: red;
 }
 </style>
 <template>

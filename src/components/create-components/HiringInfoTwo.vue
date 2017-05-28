@@ -55,7 +55,7 @@ export default {
                 <div class="columns">
                     <div class="column is-three-quarters">
                         <h1 class="header-border"></h1>
-                        <form id="basic-form" class="padding-top-25">
+                        <form id="hiring-two-form" class="padding-top-25">
                             <div class="field">
                                 <p class="control">
                                     <label class="label">Aumento de quadro</label>
@@ -63,7 +63,7 @@ export default {
                                 </p>
                             </div>
                             <div class="field">
-                                <label class="label">Motivo da substituição:</label>
+                                <label class="label required">Motivo da substituição:</label>
                                 <p class="control">
                                 <span class="select half-area">
                                   <select v-model="contratacaoTwoModel.motivoSubstituicao">
@@ -77,7 +77,7 @@ export default {
                             <div class="columns">
                                 <div class="column">
                                     <div class="field">
-                                        <label class="label">Regime de Trabalho:</label>
+                                        <label class="label required">Regime de Trabalho:</label>
                                         <p class="control">
                                         <span class="select full-area ">
                                           <select v-model="contratacaoTwoModel.regimeTrabalho">
@@ -91,7 +91,7 @@ export default {
                                 </div>
                                 <div class="column">
                                     <div class="field">
-                                        <label class="label">Carga Horária:</label>
+                                        <label class="label required">Carga Horária:</label>
                                         <p class="control">
                                         <span class="select full-area ">
                                           <select v-model="contratacaoTwoModel.cargaHoraria">
@@ -105,7 +105,7 @@ export default {
                                 </div>
                             </div>
                             <div class="field">
-                                <label class="label">Requisitos/Perfil</label>
+                                <label class="label required">Requisitos/Perfil</label>
                                 <textarea class="textarea" v-model="contratacaoTwoModel.requisitos"></textarea>
                             </div>
                         </form>

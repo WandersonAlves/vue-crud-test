@@ -43,9 +43,9 @@ export default {
                 <div class="columns">
                     <div class="column is-three-quarters">
                         <h1 class="header-border"></h1>
-                        <form id="basic-form" class="padding-top-25">
+                        <form id="justificativa-form" class="padding-top-25">
                             <div class="field">
-                                <label class="label">Justificativa</label>
+                                <label class="label required">Justificativa</label>
                                 <textarea class="textarea" v-model="justificativaModel.justificativa"></textarea>
                             </div>
                         </form>

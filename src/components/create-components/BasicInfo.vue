@@ -54,10 +54,10 @@ export default {
                         <h1 class="header-border"></h1>
                         <form id="basic-form" class="padding-top-25">
                             <div class="field">
-                                <label class="label">Tipo do Formulário:</label>
+                                <label class="label required">Tipo do Formulário:</label>
                                 <p class="control">
                                     <span class="select half-area">
-                                      <select v-model="tipoFormularioModel.tipoFormulario">
+                                      <select v-model="tipoFormularioModel.tipoFormulario" required>
                                           <option v-for="option in tipoFormularioOptions" v-bind:value="option.value">
                                               {{ option.text }}
                                           </option>
@@ -66,7 +66,7 @@ export default {
                                 </p>
                             </div>
                             <div class="field">
-                                <label class="label">Data de movimentação:</label>
+                                <label class="label required">Data de movimentação:</label>
                                 <p class="control has-icons-right half-area">
                                     <datepicker v-model="tipoFormularioModel.dataMovimentacao"
                                                 :format="'dd/MM/yyyy'"

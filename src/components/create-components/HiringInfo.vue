@@ -63,9 +63,9 @@ export default {
                 <div class="columns">
                     <div class="column is-three-quarters">
                         <h1 class="header-border"></h1>
-                        <form id="basic-form" class="padding-top-25">
+                        <form id="hiring-form" class="padding-top-25">
                             <div class="field">
-                                <label class="label">Data de Admissão:</label>
+                                <label class="label required">Data de Admissão:</label>
                                 <p class="control has-icons-right half-area">
                                     <datepicker v-model="contratacaoFormularioModel.dataAdmissao"
                                                 :format="'dd/MM/yyyy'"
@@ -84,10 +84,10 @@ export default {
                             <div class="columns">
                                 <div class="column">
                                     <div class="field">
-                                        <label class="label">Unidade:</label>
+                                        <label class="label required">Unidade:</label>
                                         <p class="control">
                                             <span class="select full-area ">
-                                              <select v-model="contratacaoFormularioModel.unidade">
+                                              <select v-model="contratacaoFormularioModel.unidade" required>
                                                   <option v-for="option in unidadeOptions" v-bind:value="option.value">
                                                       {{ option.text }}
                                                   </option>
@@ -96,10 +96,10 @@ export default {
                                         </p>
                                     </div>
                                     <div class="field">
-                                        <label class="label">Setor:</label>
+                                        <label class="label required">Setor:</label>
                                         <p class="control">
                                             <span class="select full-area ">
-                                              <select v-model="contratacaoFormularioModel.setor">
+                                              <select v-model="contratacaoFormularioModel.setor" required>
                                                   <option v-for="option in setorOptions" v-bind:value="option.value">
                                                       {{ option.text }}
                                                   </option>
@@ -108,10 +108,10 @@ export default {
                                         </p>
                                     </div>
                                     <div class="field">
-                                        <label class="label">Coordenação:</label>
+                                        <label class="label required">Coordenação:</label>
                                         <p class="control">
                                             <span class="select full-area ">
-                                              <select v-model="contratacaoFormularioModel.coordenacao">
+                                              <select v-model="contratacaoFormularioModel.coordenacao" required>
                                                   <option v-for="option in coordenacaoOptions" v-bind:value="option.value">
                                                       {{ option.text }}
                                                   </option>
@@ -122,14 +122,14 @@ export default {
                                 </div>
                                 <div class="column">
                                     <div class="field">
-                                        <label class="label">Salário (R$):</label>
-                                        <input class="input" v-model="contratacaoFormularioModel.salario" />
+                                        <label class="label required">Salário (R$):</label>
+                                        <input class="input" v-model="contratacaoFormularioModel.salario" required/>
                                     </div>
                                     <div class="field">
-                                        <label class="label">Cargo:</label>
+                                        <label class="label required">Cargo:</label>
                                         <p class="control">
                                             <span class="select full-area ">
-                                              <select v-model="contratacaoFormularioModel.cargo">
+                                              <select v-model="contratacaoFormularioModel.cargo" required>
                                                   <option v-for="option in cargoOptions" v-bind:value="option.value">
                                                       {{ option.text }}
                                                   </option>
@@ -138,10 +138,10 @@ export default {
                                         </p>
                                     </div>
                                     <div class="field">
-                                        <label class="label">Gerência:</label>
+                                        <label class="label required">Gerência:</label>
                                         <p class="control">
                                             <span class="select full-area ">
-                                              <select v-model="contratacaoFormularioModel.gerencia">
+                                              <select v-model="contratacaoFormularioModel.gerencia" required>
                                                   <option v-for="option in gerenciaOptions" v-bind:value="option.value">
                                                       {{ option.text }}
                                                   </option>
@@ -150,7 +150,6 @@ export default {
                                         </p>
                                     </div>
                                 </div>
-
                             </div>
                         </form>
                     </div>
