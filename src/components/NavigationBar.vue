@@ -73,7 +73,7 @@
         <div class="nav-left">
             <a class="nav-item logo-bg">LOGO</a>
             <a class="nav-item padding-right">
-                <span class="icon white" v-on:click="caretRight=!caretRight; showSidebar=!showSidebar">
+                <span class="icon white" @click="caretRight=!caretRight; showSidebar=!showSidebar">
                   <i class="fa fa-bars" aria-hidden="true"></i>
                   <i class="fa carret"
                      v-bind:class="{'fa-caret-right': caretRight, 'fa-caret-left': !caretRight}"
@@ -87,7 +87,7 @@
                     <i class="fa fa-bell-o font-size" aria-hidden="true"><badge :counter="notifications"></badge></i>
                 </span>
             </a>
-            <a class="nav-item" v-on:click="caretDown=!caretDown; showExit=!showExit">
+            <a class="nav-item" @click="caretDown=!caretDown; showExit=!showExit">
                 <span class="icon padding-right">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
@@ -103,7 +103,7 @@
     <div class="sidebar" v-if="showSidebar">
         <ul class="menu-list">
             <li><a>Painel de Controle</a></li>
-            <li><router-link :to="{ name: 'create'}">Movimentação de Pessoal</router-link></li>
+            <li><router-link :to="{ name: 'list'}">Movimentação de Pessoal</router-link></li>
             <li><a>Relatórios</a></li>
         </ul>
     </div>
@@ -119,6 +119,7 @@
 
 <script>
 import Badge from './Badge.vue';
+import Route from '../router';
 
 export default {
     name: 'NavigationBar',
