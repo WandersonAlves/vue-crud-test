@@ -1,58 +1,70 @@
-<style scoped>
+<style>
 .content-area {
     margin: 70px 120px 0px 120px;
+}
+.form-content {
+    padding: 40px;
+    background-color: #eff3f6;
+}
+
+.form-header {
+    color: gray;
+}
+
+.header-border {
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+}
+
+.margin-zero {
+    margin: 0px;
+}
+.padding-top-25 {
+    padding-top: 25px;
+}
+.title {
+    color: #003551;
+    font-weight: bold;
+}
+.half-area {
+    width: 50%;
 }
 </style>
 
 <template>
 <div id="create">
     <navigation-bar :user="user" :notifications="notifications"></navigation-bar>
-    <div class="content-area">
-        <div class="columns">
-            <div class="column">
-                <h1 class="title is-4">Nova movimentação pessoal</h1>
-            </div>
-        </div>
-        <div class="columns">
-            <div class="column">
-                <basic-info :tipoFormularioModel="dataModels.tipoFormularioModel" :tipoFormularioOptions="formOptions.tipoFormularioOptions"></basic-info>
-            </div>
-        </div>
-    </div>
+    <basic-info :tipoFormularioModel="dataModels.tipoFormularioModel"
+                :tipoFormularioOptions="formOptions.tipoFormularioOptions"
+                :SectionInfo="'Informações Basicas'">
+    </basic-info>
+    <hiring-info :contratacaoFormularioModel="dataModels.contratacaoFormularioModel"
+                 :SectionInfo="'Contratação'"
+                 :unidadeOptions="formOptions.unidadeOptions"
+                 :setorOptions="formOptions.setorOptions"
+                 :coordenacaoOptions="formOptions.coordenacaoOptions"
+                 :cargoOptions="formOptions.cargoOptions"
+                 :gerenciaOptions="formOptions.gerenciaOptions">
+    </hiring-info>
+
 </div>
 </template>
 
 <script>
 import NavigationBar from '../components/NavigationBar.vue';
 import BasicInfo from '../components/create-components/BasicInfo.vue';
+import HiringInfo from '../components/create-components/HiringInfo.vue';
 import { addMovimentacao } from '../store/actions';
-
-const formOptions = {
-    tipoFormularioOptions: [
-        {
-            text: 'Opção 1',
-            value: 1
-        },
-        {
-            text: 'Opção 2',
-            value: 2
-        }
-    ]
-};
-
-let dataModels = {
-    tipoFormularioModel: {
-        tipoFormulario: null,
-        dataMovimentacao: null
-    }
-};
+import { formOptions } from '../store/constants';
+import { dataModels } from '../store/constants';
 
 export default {
     name: 'Create',
     props: [],
     components: {
         NavigationBar,
-        BasicInfo
+        BasicInfo,
+        HiringInfo
     },
     data() {
         return {
