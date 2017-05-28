@@ -28,6 +28,9 @@ export default {
         SectionInfo: {
             required: true,
             type: String
+        },
+        validInputs: {
+          type: Object
         }
     },
     components: {
@@ -65,7 +68,7 @@ export default {
                             <div class="field">
                                 <label class="label required">Motivo da substituição:</label>
                                 <p class="control">
-                                <span class="select half-area">
+                                <span class="select half-area" v-bind:class="{'is-danger': !validInputs.motivoSubstituicao}">
                                   <select v-model="contratacaoTwoModel.motivoSubstituicao">
                                       <option v-for="option in motivoSubstituicaoOptions" v-bind:value="option.value">
                                           {{ option.text }}
@@ -79,7 +82,7 @@ export default {
                                     <div class="field">
                                         <label class="label required">Regime de Trabalho:</label>
                                         <p class="control">
-                                        <span class="select full-area ">
+                                        <span class="select full-area" v-bind:class="{'is-danger': !validInputs.regimeTrabalho}">
                                           <select v-model="contratacaoTwoModel.regimeTrabalho">
                                               <option v-for="option in regimeTrabalhoOptions" v-bind:value="option.value">
                                                   {{ option.text }}
@@ -93,7 +96,7 @@ export default {
                                     <div class="field">
                                         <label class="label required">Carga Horária:</label>
                                         <p class="control">
-                                        <span class="select full-area ">
+                                        <span class="select full-area" v-bind:class="{'is-danger': !validInputs.cargaHoraria}">
                                           <select v-model="contratacaoTwoModel.cargaHoraria">
                                               <option v-for="option in cargaHorariaOptions" v-bind:value="option.value">
                                                   {{ option.text }}
@@ -106,7 +109,7 @@ export default {
                             </div>
                             <div class="field">
                                 <label class="label required">Requisitos/Perfil</label>
-                                <textarea class="textarea" v-model="contratacaoTwoModel.requisitos"></textarea>
+                                <textarea v-bind:class="{'is-danger': !validInputs.requisitos}" class="textarea" v-model="contratacaoTwoModel.requisitos"></textarea>
                             </div>
                         </form>
                     </div>

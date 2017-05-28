@@ -20,6 +20,9 @@ td:first-child {
 .table>thead>tr>th {
     white-space: nowrap;
 }
+.table td{
+    white-space: nowrap;
+}
 .overflow {
   overflow: auto;
 }

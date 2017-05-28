@@ -16,7 +16,8 @@
 <div id="create">
     <basic-info :tipoFormularioModel="dataModels.tipoFormularioModel"
                 :tipoFormularioOptions="formOptions.tipoFormularioOptions"
-                :SectionInfo="'Informações Basicas'">
+                :SectionInfo="'Informações Basicas'"
+                :validInputs="validInputs">
     </basic-info>
     <hiring-info :contratacaoFormularioModel="dataModels.contratacaoFormularioModel"
                  :SectionInfo="'Contratação'"
@@ -24,16 +25,19 @@
                  :setorOptions="formOptions.setorOptions"
                  :coordenacaoOptions="formOptions.coordenacaoOptions"
                  :cargoOptions="formOptions.cargoOptions"
-                 :gerenciaOptions="formOptions.gerenciaOptions">
+                 :gerenciaOptions="formOptions.gerenciaOptions"
+                 :validInputs="validInputs">
     </hiring-info>
     <hiring-info-two :contratacaoTwoModel="dataModels.contratacaoTwoModel"
                      :SectionInfo="'Contratação'"
                      :motivoSubstituicaoOptions="formOptions.motivoSubstituicaoOptions"
                      :regimeTrabalhoOptions="formOptions.regimeTrabalhoOptions"
-                     :cargaHorariaOptions="formOptions.cargaHorariaOptions">
+                     :cargaHorariaOptions="formOptions.cargaHorariaOptions"
+                     :validInputs="validInputs">
     </hiring-info-two>
     <justificativa-info :justificativaModel="dataModels.justificativaModel"
-                        :SectionInfo="'Justificativa'">
+                        :SectionInfo="'Justificativa'"
+                        :validInputs="validInputs">
     </justificativa-info>
     <movimentacao-info :movimentacaoModel="dataModels.movimentacaoModel"
                        :SectionInfo="'Movimentação de pessoal relacionadas'">
@@ -57,6 +61,7 @@ import JustificativaInfo from '../components/create-components/JustificativaInfo
 import MovimentacaoInfo from '../components/create-components/MovimentacaoInfo.vue';
 import Store from '../store/store';
 import Route from '../router';
+import { Factory } from '../utils/factory'
 import { formOptions, dataModels } from '../store/constants';
 import Vue from 'vue';
 
@@ -75,7 +80,23 @@ export default {
     data() {
         return {
             dataModels,
-            formOptions
+            formOptions,
+            validInputs: {
+                tipoFormulario: true,
+                dataMovimentacao: true,
+                dataAdmissao: true,
+                unidade: true,
+                salario: true,
+                setor: true,
+                cargo: true,
+                coordenacao: true,
+                gerencia: true,
+                motivoSubstituicao: true,
+                regimeTrabalho: true,
+                cargaHoraria: true,
+                requisitos: true,
+                justificativa: true
+            }
         }
     },
     methods: {
@@ -87,13 +108,21 @@ export default {
             dataModels.movimentacaoModel = {};
         },
         addMovimentacao() {
+            let abort;
             let commitObject = {
                 tipoFormularioModel: dataModels.tipoFormularioModel,
                 contratacaoFormularioModel: dataModels.contratacaoFormularioModel,
                 contratacaoTwoModel: dataModels.contratacaoTwoModel,
                 justificativaModel: dataModels.justificativaModel,
                 movimentacaoModel: dataModels.movimentacaoModel,
+            };
+            [this.validInputs, abort] = Factory.checkIfValid(commitObject, this.validInputs);
+
+            if (abort) {
+                alert('Faltando preencher campos');
+                return;
             }
+
             Store.commit("ADD_MOVIMENTACOES", commitObject);
             Store.commit("INCREMENT");
             Route.push({name: 'list'});

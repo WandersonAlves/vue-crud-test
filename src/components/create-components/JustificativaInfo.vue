@@ -16,6 +16,9 @@ export default {
         SectionInfo: {
             required: true,
             type: String
+        },
+        validInputs: {
+          type: Object
         }
     },
     components: {
@@ -46,7 +49,7 @@ export default {
                         <form id="justificativa-form" class="padding-top-25">
                             <div class="field">
                                 <label class="label required">Justificativa</label>
-                                <textarea class="textarea" v-model="justificativaModel.justificativa"></textarea>
+                                <textarea v-bind:class="{'is-danger': !validInputs.justificativa}" class="textarea" v-model="justificativaModel.justificativa"></textarea>
                             </div>
                         </form>
                     </div>

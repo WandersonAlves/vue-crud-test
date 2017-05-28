@@ -20,6 +20,9 @@ export default {
         SectionInfo: {
             required: true,
             type: String
+        },
+        validInputs: {
+          type: Object
         }
     },
     components: {
@@ -56,7 +59,7 @@ export default {
                             <div class="field">
                                 <label class="label required">Tipo do Formulário:</label>
                                 <p class="control">
-                                    <span class="select half-area">
+                                    <span class="select half-area" v-bind:class="{'is-danger': !validInputs.tipoFormulario}">
                                       <select v-model="tipoFormularioModel.tipoFormulario">
                                           <option v-for="option in tipoFormularioOptions" v-bind:value="option.value">
                                               {{ option.text }}

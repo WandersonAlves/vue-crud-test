@@ -37,6 +37,9 @@ export default {
         gerenciaOptions: {
             required: true,
             type: Array
+        },
+        validInputs: {
+          type: Object
         }
     },
     components: {
@@ -69,7 +72,7 @@ export default {
                             <div class="field">
                                 <label class="label required">Data de Admissão:</label>
                                 <p class="control has-icons-right half-area">
-                                    <datepicker v-model="contratacaoFormularioModel.dataAdmissao"
+                                    <datepicker v-model="contratacaoFormularioModel.dataAdmissao" v-bind:class="{'is-danger': !validInputs.dataAdmissao}"
                                                 :format="'dd/MM/yyyy'"
                                                 :required="true"
                                                 :input-class="'input'">
@@ -88,7 +91,7 @@ export default {
                                     <div class="field">
                                         <label class="label required">Unidade:</label>
                                         <p class="control">
-                                            <span class="select full-area ">
+                                            <span class="select full-area " v-bind:class="{'is-danger': !validInputs.unidade}">
                                               <select v-model="contratacaoFormularioModel.unidade" required>
                                                   <option v-for="option in unidadeOptions" v-bind:value="option.value">
                                                       {{ option.text }}
@@ -100,7 +103,7 @@ export default {
                                     <div class="field">
                                         <label class="label required">Setor:</label>
                                         <p class="control">
-                                            <span class="select full-area ">
+                                            <span class="select full-area " v-bind:class="{'is-danger': !validInputs.setor}">
                                               <select v-model="contratacaoFormularioModel.setor" required>
                                                   <option v-for="option in setorOptions" v-bind:value="option.value">
                                                       {{ option.text }}
@@ -112,7 +115,7 @@ export default {
                                     <div class="field">
                                         <label class="label required">Coordenação:</label>
                                         <p class="control">
-                                            <span class="select full-area ">
+                                            <span class="select full-area " v-bind:class="{'is-danger': !validInputs.coordenacao}">
                                               <select v-model="contratacaoFormularioModel.coordenacao" required>
                                                   <option v-for="option in coordenacaoOptions" v-bind:value="option.value">
                                                       {{ option.text }}
@@ -125,12 +128,12 @@ export default {
                                 <div class="column">
                                     <div class="field">
                                         <label class="label required">Salário (R$):</label>
-                                        <vue-numeric required class="input" currency="R$" v-model="contratacaoFormularioModel.salario"></vue-numeric>
+                                        <vue-numeric v-bind:class="{'is-danger': !validInputs.salario}" required class="input" currency="R$" v-model="contratacaoFormularioModel.salario"></vue-numeric>
                                     </div>
                                     <div class="field">
                                         <label class="label required">Cargo:</label>
                                         <p class="control">
-                                            <span class="select full-area ">
+                                            <span class="select full-area " v-bind:class="{'is-danger': !validInputs.cargo}">
                                               <select v-model="contratacaoFormularioModel.cargo" required>
                                                   <option v-for="option in cargoOptions" v-bind:value="option.value">
                                                       {{ option.text }}
@@ -142,7 +145,7 @@ export default {
                                     <div class="field">
                                         <label class="label required">Gerência:</label>
                                         <p class="control">
-                                            <span class="select full-area ">
+                                            <span class="select full-area " v-bind:class="{'is-danger': !validInputs.gerencia}">
                                               <select v-model="contratacaoFormularioModel.gerencia" required>
                                                   <option v-for="option in gerenciaOptions" v-bind:value="option.value">
                                                       {{ option.text }}
