@@ -14,7 +14,6 @@
 
 <template>
 <div id="create">
-    <navigation-bar :user="user" :notifications="notifications"></navigation-bar>
     <basic-info :tipoFormularioModel="dataModels.tipoFormularioModel"
                 :tipoFormularioOptions="formOptions.tipoFormularioOptions"
                 :SectionInfo="'Informações Basicas'">
@@ -47,19 +46,17 @@
             </div>
         </div>
     </div>
-    <grey-footer></grey-footer>
 </div>
 </template>
 
 <script>
-import NavigationBar from '../components/NavigationBar.vue';
 import BasicInfo from '../components/create-components/BasicInfo.vue';
 import HiringInfo from '../components/create-components/HiringInfo.vue';
 import HiringInfoTwo from '../components/create-components/HiringInfoTwo.vue';
 import JustificativaInfo from '../components/create-components/JustificativaInfo.vue';
 import MovimentacaoInfo from '../components/create-components/MovimentacaoInfo.vue';
-import GreyFooter from '../components/Footer.vue';
 import Store from '../store/store';
+import Route from '../router';
 import { formOptions, dataModels } from '../store/constants';
 import Vue from 'vue';
 
@@ -69,18 +66,14 @@ export default {
     name: 'Create',
     props: [],
     components: {
-        NavigationBar,
         BasicInfo,
         HiringInfo,
         HiringInfoTwo,
         JustificativaInfo,
-        MovimentacaoInfo,
-        GreyFooter
+        MovimentacaoInfo
     },
     data() {
         return {
-            user: 'Wanderson Alves',
-            notifications: 4,
             dataModels,
             formOptions
         }
@@ -102,6 +95,7 @@ export default {
                 movimentacaoModel: dataModels.movimentacaoModel,
             }
             Store.commit("ADD_MOVIMENTACOES", commitObject);
+            Route.push({name: 'list'});
         }
     }
 }

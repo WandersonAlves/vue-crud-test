@@ -32,22 +32,34 @@
   content: " *";
   color: red;
 }
+
 </style>
 <template>
   <div id="app">
-    <router-view></router-view>
+    <navigation-bar :user="user" :notifications="notifications"></navigation-bar>
+    <transition>
+        <router-view></router-view>
+    </transition>
+    <grey-footer></grey-footer>
   </div>
 </template>
 
 <script>
 import styles from './assets/scss/main.sass';
+import NavigationBar from './components/NavigationBar.vue';
+import GreyFooter from './components/Footer.vue';
 
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      user: 'Wanderson Alves',
+      notifications: 4,
     }
+  },
+  components: {
+    NavigationBar,
+    GreyFooter
   }
 }
 </script>

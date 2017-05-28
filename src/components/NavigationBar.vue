@@ -32,8 +32,10 @@
 
 .sidebar {
     background-color: #4c5c66;
-    max-width: 30%;
+    width: 20%;
     height: 20rem;
+    z-index: 99999;
+    position: absolute;
 }
 
 .menu-list>li {
@@ -90,7 +92,7 @@
     <div class="sidebar" v-if="showSidebar">
         <ul class="menu-list">
             <li><a>Painel de Controle</a></li>
-            <li><a>Movimentação de Pessoal</a></li>
+            <li><router-link :to="{ name: 'create'}">Movimentação de Pessoal</router-link></li>
             <li><a>Relatórios</a></li>
         </ul>
     </div>
