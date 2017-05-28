@@ -86,7 +86,7 @@ export default {
                                     <div class="field">
                                         <label class="label">Unidade:</label>
                                         <p class="control">
-                                            <span class="select">
+                                            <span class="select full-area ">
                                               <select v-model="contratacaoFormularioModel.unidade">
                                                   <option v-for="option in unidadeOptions" v-bind:value="option.value">
                                                       {{ option.text }}
@@ -98,7 +98,7 @@ export default {
                                     <div class="field">
                                         <label class="label">Setor:</label>
                                         <p class="control">
-                                            <span class="select">
+                                            <span class="select full-area ">
                                               <select v-model="contratacaoFormularioModel.setor">
                                                   <option v-for="option in setorOptions" v-bind:value="option.value">
                                                       {{ option.text }}
@@ -110,7 +110,7 @@ export default {
                                     <div class="field">
                                         <label class="label">Coordenação:</label>
                                         <p class="control">
-                                            <span class="select">
+                                            <span class="select full-area ">
                                               <select v-model="contratacaoFormularioModel.coordenacao">
                                                   <option v-for="option in coordenacaoOptions" v-bind:value="option.value">
                                                       {{ option.text }}
@@ -128,7 +128,7 @@ export default {
                                     <div class="field">
                                         <label class="label">Cargo:</label>
                                         <p class="control">
-                                            <span class="select">
+                                            <span class="select full-area ">
                                               <select v-model="contratacaoFormularioModel.cargo">
                                                   <option v-for="option in cargoOptions" v-bind:value="option.value">
                                                       {{ option.text }}
@@ -140,7 +140,7 @@ export default {
                                     <div class="field">
                                         <label class="label">Gerência:</label>
                                         <p class="control">
-                                            <span class="select">
+                                            <span class="select full-area ">
                                               <select v-model="contratacaoFormularioModel.gerencia">
                                                   <option v-for="option in gerenciaOptions" v-bind:value="option.value">
                                                       {{ option.text }}

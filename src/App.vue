@@ -22,13 +22,11 @@
 .padding-top-25 {
     padding-top: 25px;
 }
-.title {
-    color: #003551;
-    font-weight: bold;
-}
 .half-area {
     width: 50%;
-    min-width: 50%;
+}
+.full-area {
+  width: 100%;
 }
 .uppercase {
   text-transform: uppercase;

@@ -4,6 +4,7 @@
 @import "mixins"
 
 $primary: grey
+$blue: $dark-blue
 
 // Load bulma framework
 @import "~bulma/bulma"
@@ -19,6 +20,9 @@ a.nav-item
   +nav-item-a-color
 
 .label
-  color: $navbar-dark-blue !important
+  color: $dark-blue !important
   font-size: 0.8rem
   padding-top: 6px
+
+.select select
+  width: 100%

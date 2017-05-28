@@ -55,8 +55,8 @@ export default {
                         <form id="basic-form" class="padding-top-25">
                             <div class="field">
                                 <label class="label">Tipo do Formulário:</label>
-                                <p class="control half-area">
-                                    <span class="select">
+                                <p class="control">
+                                    <span class="select half-area">
                                       <select v-model="tipoFormularioModel.tipoFormulario">
                                           <option v-for="option in tipoFormularioOptions" v-bind:value="option.value">
                                               {{ option.text }}

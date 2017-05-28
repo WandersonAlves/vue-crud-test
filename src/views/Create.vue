@@ -37,8 +37,16 @@
                         :SectionInfo="'Justificativa'">
     </justificativa-info>
     <movimentacao-info :movimentacaoModel="dataModels.movimentacaoModel"
-                       :SectionInfo="'Movimentação de pessoal relacionadas'"
-    ></movimentacao-info>
+                       :SectionInfo="'Movimentação de pessoal relacionadas'">
+    </movimentacao-info>
+    <div class="content-area">
+        <div class="columns">
+            <div class="column">
+                <a class="button is-info is-outlined is-pulled-left">CANCELAR E DESCARTAR</a>
+                <a class="button is-info is-outlined is-pulled-right">SALVAR E ENVIAR</a>
+            </div>
+        </div>
+    </div>
 </div>
 </template>
 

@@ -65,7 +65,7 @@ export default {
                             <div class="field">
                                 <label class="label">Motivo da substituição:</label>
                                 <p class="control">
-                                <span class="select">
+                                <span class="select half-area">
                                   <select v-model="contratacaoTwoModel.motivoSubstituicao">
                                       <option v-for="option in motivoSubstituicaoOptions" v-bind:value="option.value">
                                           {{ option.text }}
@@ -79,7 +79,7 @@ export default {
                                     <div class="field">
                                         <label class="label">Regime de Trabalho:</label>
                                         <p class="control">
-                                        <span class="select">
+                                        <span class="select full-area ">
                                           <select v-model="contratacaoTwoModel.regimeTrabalho">
                                               <option v-for="option in regimeTrabalhoOptions" v-bind:value="option.value">
                                                   {{ option.text }}
@@ -93,7 +93,7 @@ export default {
                                     <div class="field">
                                         <label class="label">Carga Horária:</label>
                                         <p class="control">
-                                        <span class="select">
+                                        <span class="select full-area ">
                                           <select v-model="contratacaoTwoModel.cargaHoraria">
                                               <option v-for="option in cargaHorariaOptions" v-bind:value="option.value">
                                                   {{ option.text }}
