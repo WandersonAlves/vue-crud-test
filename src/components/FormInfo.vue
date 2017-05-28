@@ -18,6 +18,9 @@
     color: #003551;
     font-weight: bold;
 }
+.uppercase {
+  text-transform: uppercase;
+}
 </style>
 
 <script>
@@ -44,7 +47,7 @@ export default {
 
 <template>
   <div>
-      <h6 class="title smaller" v-if="textA">{{textA}}</h6>
+      <h6 class="title smaller uppercase" v-if="textA">{{textA}}</h6>
       <h6 class="title green-before small" v-if="textB">{{textB}}</h6>
       <h6 class="title smaller">{{textC}}</h6>
   </div>

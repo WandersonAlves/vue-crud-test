@@ -53,7 +53,9 @@
                      :regimeTrabalhoOptions="formOptions.regimeTrabalhoOptions"
                      :cargaHorariaOptions="formOptions.cargaHorariaOptions">
     </hiring-info-two>
-
+    <justificativa-info :justificativaModel="dataModels.justificativaModel"
+                        :SectionInfo="'Justificativa'">
+    </justificativa-info>
 </div>
 </template>
 
@@ -62,6 +64,7 @@ import NavigationBar from '../components/NavigationBar.vue';
 import BasicInfo from '../components/create-components/BasicInfo.vue';
 import HiringInfo from '../components/create-components/HiringInfo.vue';
 import HiringInfoTwo from '../components/create-components/HiringInfoTwo.vue';
+import JustificativaInfo from '../components/create-components/JustificativaInfo.vue';
 import { addMovimentacao } from '../store/actions';
 import { formOptions } from '../store/constants';
 import { dataModels } from '../store/constants';
@@ -73,7 +76,8 @@ export default {
         NavigationBar,
         BasicInfo,
         HiringInfo,
-        HiringInfoTwo
+        HiringInfoTwo,
+        JustificativaInfo
     },
     data() {
         return {

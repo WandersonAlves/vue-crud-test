@@ -122,5 +122,8 @@ export const dataModels = {
     regimeTrabalho: null,
     cargaHoraria: null,
     requisitos: null
+  },
+  justificativaModel: {
+    justificativa: null
   }
 };

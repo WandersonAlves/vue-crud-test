@@ -53,7 +53,7 @@ export default {
                     </div>
                 </div>
                 <div class="columns">
-                    <div class="column">
+                    <div class="column is-three-quarters">
                         <h1 class="header-border"></h1>
                         <form id="basic-form" class="padding-top-25">
                             <div class="field">
@@ -111,9 +111,9 @@ export default {
                         </form>
                     </div>
                     <div class="column">
-                        <form-info :textA="'Informação Básica'"
-                                   :textB="'Como prencher essa seção'"
-                                   :textC="'Selecione o tipo de movimentação pessoal'">
+                        <form-info :textA="'Informações da contratação'"
+                                   :textB="'Detalhes da contratação'"
+                                   :textC="'Informe os dados relacionados a contratação, aumento de quadro, motivo da substituição, regime de trabalho, carga horária e requisitos/perfil.'">
                         </form-info>
                     </div>
                 </div>
