@@ -52,12 +52,12 @@ export default {
                 <div class="columns">
                     <div class="column is-three-quarters">
                         <h1 class="header-border"></h1>
-                        <form id="basic-form" class="padding-top-25">
+                        <form id="basic-form" class="form padding-top-25">
                             <div class="field">
                                 <label class="label required">Tipo do Formulário:</label>
                                 <p class="control">
                                     <span class="select half-area">
-                                      <select v-model="tipoFormularioModel.tipoFormulario" required>
+                                      <select v-model="tipoFormularioModel.tipoFormulario">
                                           <option v-for="option in tipoFormularioOptions" v-bind:value="option.value">
                                               {{ option.text }}
                                           </option>

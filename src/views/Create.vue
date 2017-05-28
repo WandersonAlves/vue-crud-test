@@ -47,6 +47,7 @@
             </div>
         </div>
     </div>
+    <grey-footer></grey-footer>
 </div>
 </template>
 
@@ -57,9 +58,9 @@ import HiringInfo from '../components/create-components/HiringInfo.vue';
 import HiringInfoTwo from '../components/create-components/HiringInfoTwo.vue';
 import JustificativaInfo from '../components/create-components/JustificativaInfo.vue';
 import MovimentacaoInfo from '../components/create-components/MovimentacaoInfo.vue';
+import GreyFooter from '../components/Footer.vue';
 import Store from '../store/store';
-import { formOptions } from '../store/constants';
-import { dataModels } from '../store/constants';
+import { formOptions, dataModels } from '../store/constants';
 import Vue from 'vue';
 
 const bus = new Vue();
@@ -73,7 +74,8 @@ export default {
         HiringInfo,
         HiringInfoTwo,
         JustificativaInfo,
-        MovimentacaoInfo
+        MovimentacaoInfo,
+        GreyFooter
     },
     data() {
         return {
@@ -93,8 +95,8 @@ export default {
         },
         addMovimentacao() {
             let commitObject = {
-                contratacaoFormularioModel: dataModels.contratacaoFormularioModel,
                 tipoFormularioModel: dataModels.tipoFormularioModel,
+                contratacaoFormularioModel: dataModels.contratacaoFormularioModel,
                 contratacaoTwoModel: dataModels.contratacaoTwoModel,
                 justificativaModel: dataModels.justificativaModel,
                 movimentacaoModel: dataModels.movimentacaoModel,
