@@ -25,10 +25,10 @@ export default {
     name: 'FormInfo',
     props: {
         textA: {
-            required: true
+            type: String
         },
         textB: {
-            required: true
+            type: String
         },
         textC: {
             required: true
@@ -44,8 +44,8 @@ export default {
 
 <template>
   <div>
-      <h6 class="title smaller">{{textA}}</h6>
-      <h6 class="title green-before small">{{textB}}</h6>
+      <h6 class="title smaller" v-if="textA">{{textA}}</h6>
+      <h6 class="title green-before small" v-if="textB">{{textB}}</h6>
       <h6 class="title smaller">{{textC}}</h6>
   </div>
 </template>
