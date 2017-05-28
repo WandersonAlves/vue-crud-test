@@ -49,6 +49,18 @@ export default {
     },
     data() {
         return {}
+    },
+    computed: {
+        isDateValid(value) {
+            return (value) => {
+                if (this.validInputs[value]) {
+                    return 'input'
+                }
+                else {
+                    return 'input is-danger'
+                }
+            }
+        }
     }
 }
 
@@ -72,10 +84,10 @@ export default {
                             <div class="field">
                                 <label class="label required">Data de Admissão:</label>
                                 <p class="control has-icons-right half-area">
-                                    <datepicker v-model="contratacaoFormularioModel.dataAdmissao" v-bind:class="{'is-danger': !validInputs.dataAdmissao}"
+                                    <datepicker v-model="contratacaoFormularioModel.dataAdmissao"
                                                 :format="'dd/MM/yyyy'"
                                                 :required="true"
-                                                :input-class="'input'">
+                                                :input-class="isDateValid('dataAdmissao')">
                                     </datepicker>
                                     <span class="icon is-small is-right">
                                       <i class="fa fa-calendar"></i>
