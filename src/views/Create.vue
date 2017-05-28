@@ -1,34 +1,14 @@
 <style>
-.content-area {
-    margin: 70px 120px 0px 120px;
-}
-.form-content {
-    padding: 40px;
-    background-color: #eff3f6;
+.small {
+    font-size: 0.8em;
 }
 
-.form-header {
-    color: gray;
-}
-
-.header-border {
-    border-bottom: 1px solid gray;
-    margin-bottom: 10px;
-}
-
-.margin-zero {
-    margin: 0px;
-}
-.padding-top-25 {
-    padding-top: 25px;
+.smaller {
+    font-size: 0.7em;
 }
 .title {
     color: #003551;
     font-weight: bold;
-}
-.half-area {
-    width: 50%;
-    min-width: 50%;
 }
 </style>
 
@@ -56,6 +36,9 @@
     <justificativa-info :justificativaModel="dataModels.justificativaModel"
                         :SectionInfo="'Justificativa'">
     </justificativa-info>
+    <movimentacao-info :movimentacaoModel="dataModels.movimentacaoModel"
+                       :SectionInfo="'Movimentação de pessoal relacionadas'"
+    ></movimentacao-info>
 </div>
 </template>
 
@@ -65,6 +48,7 @@ import BasicInfo from '../components/create-components/BasicInfo.vue';
 import HiringInfo from '../components/create-components/HiringInfo.vue';
 import HiringInfoTwo from '../components/create-components/HiringInfoTwo.vue';
 import JustificativaInfo from '../components/create-components/JustificativaInfo.vue';
+import MovimentacaoInfo from '../components/create-components/MovimentacaoInfo.vue';
 import { addMovimentacao } from '../store/actions';
 import { formOptions } from '../store/constants';
 import { dataModels } from '../store/constants';
@@ -77,7 +61,8 @@ export default {
         BasicInfo,
         HiringInfo,
         HiringInfoTwo,
-        JustificativaInfo
+        JustificativaInfo,
+        MovimentacaoInfo
     },
     data() {
         return {

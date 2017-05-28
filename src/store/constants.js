@@ -125,5 +125,8 @@ export const dataModels = {
   },
   justificativaModel: {
     justificativa: null
+  },
+  movimentacaoModel: {
+    pessoa: null
   }
 };

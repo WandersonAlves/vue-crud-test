@@ -7,20 +7,6 @@
     display: inline-flex;
     margin-right: 10px;
 }
-.small {
-    font-size: 0.8em;
-}
-
-.smaller {
-    font-size: 0.7em;
-}
-.title {
-    color: #003551;
-    font-weight: bold;
-}
-.uppercase {
-  text-transform: uppercase;
-}
 </style>
 
 <script>
