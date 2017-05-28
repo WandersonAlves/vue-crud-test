@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { addMovimentacao } from './actions';
+import { formOptions } from './constants';
 
 Vue.use(Vuex);
 
@@ -53,13 +54,25 @@ const getters = {
   getMovimetacaoes: state => {
     let movimentacoes = [];
     state.movimentacoes.map((value, key) => {
+      let tipoFormulario;
+      formOptions.tipoFormularioOptions.map((valueForm) => {
+        if (valueForm.value === value.tipoFormularioModel.tipoFormulario) {
+          tipoFormulario = valueForm.text;
+        }
+      });
+      let solicitante;
+      formOptions.coordenacaoOptions.map((valueForm) => {
+        if (valueForm.value === value.contratacaoFormularioModel.coordenacao) {
+          solicitante = valueForm.text;
+        }
+      });
       movimentacoes.push({
         numero: value.id,
-        tipo: value.tipoFormularioModel.tipoFormulario,
+        tipo: tipoFormulario,
         status: value.status,
         colaborador: value.contratacaoFormularioModel.nome,
         dataCriacao: value.contratacaoFormularioModel.dataAdmissao,
-        solicitante: value.contratacaoFormularioModel.coordenacao
+        solicitante: solicitante
       });
     });
     return movimentacoes;

@@ -1,11 +1,15 @@
 export const formOptions = {
   tipoFormularioOptions: [{
-      text: 'Opção 1',
+      text: 'Movimentação',
       value: 1
     },
     {
-      text: 'Opção 2',
+      text: 'Desligamento',
       value: 2
+    },
+    {
+      text: 'Contratação',
+      value: 3
     }
   ],
   unidadeOptions: [{
@@ -35,15 +39,15 @@ export const formOptions = {
     }
   ],
   coordenacaoOptions: [{
-      text: 'Value 1',
+      text: 'Recursos Humanos',
       value: 1
     },
     {
-      text: 'Value 2',
+      text: 'Coodernador Eminente',
       value: 2
     },
     {
-      text: 'Value 3',
+      text: 'Gerente',
       value: 3
     }
   ],
@@ -110,7 +114,7 @@ export const dataModels = {
     dataAdmissao: null,
     nome: null,
     unidade: null,
-    salario: 0,
+    salario: '',
     setor: null,
     cargo: null,
     coordenacao: null,

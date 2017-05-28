@@ -14,6 +14,9 @@ td {
 td:first-child {
   font-weight: bold !important;
 }
+td:nth-child(3) {
+
+}
 </style>
 <script>
 export default {
@@ -45,12 +48,18 @@ export default {
       <th v-for="header in tableHeader">
         {{header.title}}
       </th>
+      <th>
+
+      </th>
     </tr>
   </thead>
   <tfoot>
     <tr v-for="row in tableData">
         <td v-for="header in tableHeader">
             {{row[header.field]}}
+        </td>
+        <td>
+          <span class="icon"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></span>
         </td>
     </tr>
   </tfoot>
