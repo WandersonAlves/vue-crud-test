@@ -1,9 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Moment from 'moment';
 import { addMovimentacao } from './actions';
 import { formOptions } from './constants';
 
 Vue.use(Vuex);
+
+Moment.locale('pt-br');
 
 const state = {
   index: 0,
@@ -69,12 +72,14 @@ const getters = {
           solicitante = valueForm.text;
         }
       });
+      let date = Moment(value.contratacaoFormularioModel.dataAdmissao).format('D MMM');
+      let stringDate = `${date} (${Moment(value.contratacaoFormularioModel.dataAdmissao).fromNow()})`;
       movimentacoes.push({
         numero: value.id,
         tipo: tipoFormulario,
         status: value.status,
         colaborador: value.contratacaoFormularioModel.nome,
-        dataCriacao: value.contratacaoFormularioModel.dataAdmissao,
+        dataCriacao: stringDate,
         solicitante: solicitante,
         showProgress: false
       });

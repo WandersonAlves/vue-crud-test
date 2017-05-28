@@ -102,7 +102,7 @@ export default {
     <div class="column">
       <div class="field">
           <p class="control checkbox">
-              <input type="checkbox" v-model="searchQuery.mpAprovacao"><span class=""> MP's aguardando minha aprovação <i class="fa fa-info-circle" aria-hidden="true"></i></span>
+              <input type="checkbox" disabled v-model="searchQuery.mpAprovacao"><span class=""> MP's aguardando minha aprovação <i class="fa fa-info-circle" aria-hidden="true"></i></span>
           </p>
       </div>
     </div>
