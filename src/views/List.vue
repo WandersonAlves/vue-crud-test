@@ -5,6 +5,7 @@
 import Route from '../router';
 import Store from '../store/store';
 import SearchFields from '../components/list-components/SearchFields.vue';
+import Grid from '../components/list-components/Grid.vue';
 import { searchOptions } from '../store/constants';
 
 export default {
@@ -20,11 +21,39 @@ export default {
         mpShow: false,
         mpAprovacao: false
       },
-      searchOptions
+      searchOptions,
+      tableHeader: [
+        {
+          title: 'Número',
+          field: 'numero'
+        },
+        {
+          title: 'Tipo de Movimentação',
+          field: 'tipo'
+        },
+        {
+          title: 'Status',
+          field: 'status'
+        },
+        {
+          title: 'Colaborador',
+          field: 'colaborador'
+        },
+        {
+          title: 'Data de Criação',
+          field: 'dataCriacao'
+        },
+        {
+          title: 'Solicitante',
+          field: 'solicitante'
+        }
+      ],
+      tableData: []
     }
   },
   components: {
-    SearchFields
+    SearchFields,
+    Grid
   },
   methods: {
     createNewMovimentacao() {
@@ -32,6 +61,9 @@ export default {
         name: 'create'
       });
     }
+  },
+  mounted() {
+    this.tableData = Store.getters.getMovimetacaoes;
   }
 }
 </script>
@@ -52,6 +84,8 @@ export default {
       </div>
     </div>
   </div>
-  <search-fields :searchQuery="searchQuery" :statusOptions="searchOptions.statusOptions" :tipoOptions="searchOptions.tipoOptions"></search-fields>
+  <search-fields :searchQuery="searchQuery" :statusOptions="searchOptions.statusOptions"
+                 :tipoOptions="searchOptions.tipoOptions"></search-fields>
+  <grid :tableHeader="tableHeader" :tableData="tableData"></grid>
 </div>
 </template>

@@ -5,6 +5,7 @@ import { addMovimentacao } from './actions';
 Vue.use(Vuex);
 
 const state = {
+  index: 0,
   movimentacoes: [],
   forms: {
     tipoFormularioModel: {
@@ -39,25 +40,29 @@ const state = {
 
 const mutations = {
   ADD_MOVIMENTACOES (state, movimentacao) {
+    movimentacao.id = `MP ${state.index}/2017`;
+    movimentacao.status = 'Novo';
     state.movimentacoes.push(movimentacao);
+  },
+  INCREMENT (state) {
+    state.index++;
   }
 };
 
 const getters = {
-  getTipoFormularioModel: state => {
-    return state.forms.tipoFormularioModel;
-  },
-  getContratacaoFormularioModel: state => {
-    return state.forms.contratacaoFormularioModel;
-  },
-  getContratacaoTwoModel: state => {
-    return state.forms.contratacaoTwoModel;
-  },
-  getJustificativaModel: state => {
-    return state.forms.justificativaModel;
-  },
-  getMovimentacaoModel: state => {
-    return state.forms.movimentacaoModel;
+  getMovimetacaoes: state => {
+    let movimentacoes = [];
+    state.movimentacoes.map((value, key) => {
+      movimentacoes.push({
+        numero: value.id,
+        tipo: value.tipoFormularioModel.tipoFormulario,
+        status: value.status,
+        colaborador: value.contratacaoFormularioModel.nome,
+        dataCriacao: value.contratacaoFormularioModel.dataAdmissao,
+        solicitante: value.contratacaoFormularioModel.coordenacao
+      });
+    });
+    return movimentacoes;
   }
 }
 

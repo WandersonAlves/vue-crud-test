@@ -95,6 +95,7 @@ export default {
                 movimentacaoModel: dataModels.movimentacaoModel,
             }
             Store.commit("ADD_MOVIMENTACOES", commitObject);
+            Store.commit("INCREMENT");
             Route.push({name: 'list'});
         }
     }
