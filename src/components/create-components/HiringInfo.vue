@@ -5,9 +5,10 @@
 <script>
 import Datepicker from 'vuejs-datepicker';
 import FormInfo from '../FormInfo.vue';
+import VueNumeric from 'vue-numeric'
 
 export default {
-    name: 'BasicInfo',
+    name: 'HiringInfo',
     props: {
         contratacaoFormularioModel: {
             required: true,
@@ -40,7 +41,8 @@ export default {
     },
     components: {
         Datepicker,
-        FormInfo
+        FormInfo,
+        VueNumeric
     },
     data() {
         return {}
@@ -123,7 +125,7 @@ export default {
                                 <div class="column">
                                     <div class="field">
                                         <label class="label required">Salário (R$):</label>
-                                        <input class="input" v-model="contratacaoFormularioModel.salario" required/>
+                                        <vue-numeric required class="input" currency="R$" v-model="contratacaoFormularioModel.salario"></vue-numeric>
                                     </div>
                                     <div class="field">
                                         <label class="label required">Cargo:</label>

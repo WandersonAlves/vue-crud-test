@@ -1,4 +1,4 @@
-export const addMovimentacao = function (store) {
+export const addMovimentacao = function (store, item) {
   var dispatch = store.dispatch;
-  dispatch('ADD_MOVIMENTACOES');
+  store.commit('ADD_MOVIMENTACOES', item);
 }

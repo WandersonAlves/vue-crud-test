@@ -42,8 +42,8 @@
     <div class="content-area">
         <div class="columns">
             <div class="column">
-                <a class="button is-info is-outlined is-pulled-left">CANCELAR E DESCARTAR</a>
-                <a class="button is-info is-outlined is-pulled-right">SALVAR E ENVIAR</a>
+                <a class="button is-info is-outlined is-pulled-left" v-on:click="clearFields()">CANCELAR E DESCARTAR</a>
+                <a class="button is-info is-outlined is-pulled-right" v-on:click="addMovimentacao()">SALVAR E ENVIAR</a>
             </div>
         </div>
     </div>
@@ -57,9 +57,12 @@ import HiringInfo from '../components/create-components/HiringInfo.vue';
 import HiringInfoTwo from '../components/create-components/HiringInfoTwo.vue';
 import JustificativaInfo from '../components/create-components/JustificativaInfo.vue';
 import MovimentacaoInfo from '../components/create-components/MovimentacaoInfo.vue';
-import { addMovimentacao } from '../store/actions';
+import Store from '../store/store';
 import { formOptions } from '../store/constants';
 import { dataModels } from '../store/constants';
+import Vue from 'vue';
+
+const bus = new Vue();
 
 export default {
     name: 'Create',
@@ -80,10 +83,24 @@ export default {
             formOptions
         }
     },
-    vuex: {
-      actions: {
-        addMovimentacao
-      }
+    methods: {
+        clearFields() {
+            dataModels.contratacaoFormularioModel = {};
+            dataModels.tipoFormularioModel = {};
+            dataModels.contratacaoTwoModel = {};
+            dataModels.justificativaModel = {};
+            dataModels.movimentacaoModel = {};
+        },
+        addMovimentacao() {
+            let commitObject = {
+                contratacaoFormularioModel: dataModels.contratacaoFormularioModel,
+                tipoFormularioModel: dataModels.tipoFormularioModel,
+                contratacaoTwoModel: dataModels.contratacaoTwoModel,
+                justificativaModel: dataModels.justificativaModel,
+                movimentacaoModel: dataModels.movimentacaoModel,
+            }
+            Store.commit("ADD_MOVIMENTACOES", commitObject);
+        }
     }
 }
 </script>

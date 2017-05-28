@@ -110,7 +110,7 @@ export const dataModels = {
     dataAdmissao: null,
     nome: null,
     unidade: null,
-    salario: null,
+    salario: 0,
     setor: null,
     cargo: null,
     coordenacao: null,

@@ -12,6 +12,7 @@
     "bulma": "^0.4.1",
     "style-loader": "^0.18.1",
     "vue": "^2.2.1",
+    "vue-numeric": "^1.5.3",
     "vue-router": "^2.5.3",
     "vuejs-datepicker": "^0.7.12",
     "vuestrap": "^1.0.3",
