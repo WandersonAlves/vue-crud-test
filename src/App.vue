@@ -32,12 +32,20 @@
   content: " *";
   color: red;
 }
-
+@media screen and (max-width: 768px) {
+  .content-area {margin: 20px;}
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}
 </style>
 <template>
   <div id="app">
     <navigation-bar :user="user" :notifications="notifications"></navigation-bar>
-    <transition>
+    <transition name="fade">
         <router-view></router-view>
     </transition>
     <grey-footer></grey-footer>
