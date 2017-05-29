@@ -73,16 +73,16 @@ export default {
 <div id="list">
   <div class="content-area">
     <div class="columns">
+      <div class="column is-11">
+        <h1 class="title is-4">Movimentações de pessoal</h1>
+      </div>
       <div class="column">
-        <h1 class="title is-4 is-pulled-left">Movimentações de pessoal</h1>
-        <div class="is-pulled-right">
-          <a class="button is-success" @click="createNewMovimentacao()">
-            <span class="icon">
-              <i class="fa fa-plus-circle"></i>
-            </span>
-            <span>NOVA</span>
-          </a>
-        </div>
+        <a class="button is-success" @click="createNewMovimentacao()">
+          <span class="icon">
+            <i class="fa fa-plus-circle"></i>
+          </span>
+          <span>NOVA</span>
+        </a>
       </div>
     </div>
     <div class="columns" v-show="showInfo">

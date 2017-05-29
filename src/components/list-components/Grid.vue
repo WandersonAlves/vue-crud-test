@@ -71,7 +71,7 @@ export default {
         <tbody>
           <tr v-for="row in tableData">
               <td v-for="header in tableHeader">
-                  <span v-bind:class="{'tag': header.tag, 'is-success': row.status === 'Nova',
+                  <span v-bind:class="{'tag': header.tag, 'is-success': row.status === 'Finalizada',
                                       'is-warning': row.status === 'Reprovada', 'is-info': row.status === 'Pendente Aprovação'}">
                       {{row[header.field]}}
                   </span>

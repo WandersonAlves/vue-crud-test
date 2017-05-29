@@ -8,6 +8,9 @@
   border-bottom:1px solid grey;
   padding-bottom: 60px;
 }
+@media screen and (max-width: 768px) {
+  a {width: 100%;}
+}
 </style>
 <script>
 import Datepicker from 'vuejs-datepicker';
@@ -108,14 +111,14 @@ export default {
     </div>
   </div>
   <div class="columns">
-    <div class="column is-1">
+    <div class="column is-2">
       <div class="field">
           <p class="control">
               <a class="button is-info">Pesquisar</a>
           </p>
       </div>
     </div>
-    <div class="column">
+    <div class="column is-2">
       <div class="field">
           <p class="control">
               <a class="button is-info is-outlined">limpar</a>

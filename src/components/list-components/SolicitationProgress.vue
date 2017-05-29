@@ -44,7 +44,7 @@ export default {
 <template>
 <div id="progress">
   <div class="columns">
-    <div class="column no-padding ">
+    <div class="column">
       <div class="step-complete has-text-centered">
         <i class="fa fa-check-circle" aria-hidden="true"></i>
       </div>
@@ -54,7 +54,7 @@ export default {
         <p class="has-text-centered">10/10/1991 ás 21:30</p>
       </div>
     </div>
-    <div class="column no-padding ">
+    <div class="column">
       <div class="step-complete has-text-centered">
         <i class="fa fa-check-circle" aria-hidden="true"></i>
       </div>
@@ -64,7 +64,7 @@ export default {
         <p class="has-text-centered">10/10/1991 ás 21:30</p>
       </div>
     </div>
-    <div class="column no-padding ">
+    <div class="column">
       <div class="step-complete pending-step has-text-centered">
         <i class="fa fa-check-circle" aria-hidden="true"></i>
       </div>
@@ -72,7 +72,7 @@ export default {
         <p class="has-text-centered bold">Aprovado Gerente</p>
       </div>
     </div>
-    <div class="column no-padding ">
+    <div class="column">
       <div class="step-complete pending-step has-text-centered">
         <i class="fa fa-check-circle" aria-hidden="true"></i>
       </div>
@@ -80,7 +80,7 @@ export default {
         <p class="has-text-centered bold">Aprovado Diretor</p>
       </div>
     </div>
-    <div class="column no-padding ">
+    <div class="column">
       <div class="step-complete pending-step has-text-centered">
         <i class="fa fa-check-circle" aria-hidden="true"></i>
       </div>
@@ -88,7 +88,7 @@ export default {
         <p class="has-text-centered bold">Aprovado Superintendente</p>
       </div>
     </div>
-    <div class="column no-padding ">
+    <div class="column">
       <div class="step-complete pending-step has-text-centered">
         <i class="fa fa-check-circle" aria-hidden="true"></i>
       </div>

@@ -1,5 +1,5 @@
-export const formOptions = {
-  tipoFormularioOptions: [{
+const tipoOptions = [
+  {
       text: 'Movimentação',
       value: 1
     },
@@ -11,7 +11,9 @@ export const formOptions = {
       text: 'Contratação',
       value: 3
     }
-  ],
+];
+export const formOptions = {
+  tipoFormularioOptions: tipoOptions,
   unidadeOptions: [{
       text: 'Recife',
       value: 1
@@ -136,21 +138,17 @@ export const dataModels = {
 };
 
 export const searchOptions = {
-  tipoOptions: [{
-      text: 'Opção 1',
-      value: 1
-    },
-    {
-      text: 'Opção 2',
-      value: 2
-    }
-  ],
+  tipoOptions: tipoOptions,
   statusOptions: [{
-      text: 'Opção 1',
+      text: 'Finalizada',
       value: 1
     },
     {
-      text: 'Opção 2',
+      text: 'Reprovada',
+      value: 2
+    },
+    {
+      text: 'Pendente de Aprovação',
       value: 2
     }
   ]

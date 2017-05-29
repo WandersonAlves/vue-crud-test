@@ -44,7 +44,7 @@ const state = {
 
 const mutations = {
   ADD_MOVIMENTACOES (state, movimentacao) {
-    let textArray = ['Nova', 'Reprovada', 'Pendente Aprovação'];
+    let textArray = ['Finalizada', 'Reprovada', 'Pendente Aprovação'];
     let randomIndex = Math.floor(Math.random()*textArray.length);
 
     movimentacao.id = `MP ${state.index}/2017`;
