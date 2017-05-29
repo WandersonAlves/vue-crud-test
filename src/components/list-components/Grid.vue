@@ -26,6 +26,9 @@ td:first-child {
 .overflow {
   overflow: auto;
 }
+.wizard-card-footer {
+  display: none !important;
+}
 </style>
 <script>
 import SolicitationProgress from './SolicitationProgress.vue';
@@ -95,8 +98,8 @@ export default {
     <p class="small padding-top-25">
       {{gridLenght}} registros
     </p>
-    <div>
+    <transition name="fade">
       <solicitation-progress :step="1" v-show="showProgress"></solicitation-progress>
-    </div>
+    </transition>
 </div>
 </template>

@@ -28,6 +28,8 @@
 }
 </style>
 <script>
+
+
 export default {
   name: 'SolicitationProgress',
   props: {
@@ -43,59 +45,14 @@ export default {
 </script>
 <template>
 <div id="progress">
-  <div class="columns">
-    <div class="column">
-      <div class="step-complete has-text-centered">
-        <i class="fa fa-check-circle" aria-hidden="true"></i>
-      </div>
-      <div class="details">
-        <p class="has-text-centered bold">Encaminhada</p>
-        <p class="has-text-centered">Wanderson Alves</p>
-        <p class="has-text-centered">10/10/1991 ás 21:30</p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="step-complete has-text-centered">
-        <i class="fa fa-check-circle" aria-hidden="true"></i>
-      </div>
-      <div class="details">
-        <p class="has-text-centered bold">Aprovado GGP</p>
-        <p class="has-text-centered">Wanderson Alves</p>
-        <p class="has-text-centered">10/10/1991 ás 21:30</p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="step-complete pending-step has-text-centered">
-        <i class="fa fa-check-circle" aria-hidden="true"></i>
-      </div>
-      <div class="details">
-        <p class="has-text-centered bold">Aprovado Gerente</p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="step-complete pending-step has-text-centered">
-        <i class="fa fa-check-circle" aria-hidden="true"></i>
-      </div>
-      <div class="details">
-        <p class="has-text-centered bold">Aprovado Diretor</p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="step-complete pending-step has-text-centered">
-        <i class="fa fa-check-circle" aria-hidden="true"></i>
-      </div>
-      <div class="details">
-        <p class="has-text-centered bold">Aprovado Superintendente</p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="step-complete pending-step has-text-centered">
-        <i class="fa fa-check-circle" aria-hidden="true"></i>
-      </div>
-      <div class="details">
-        <p class="has-text-centered bold">Aprovado Provedor</p>
-      </div>
-    </div>
-  </div>
+  <link rel="stylesheet" href="vue-form-wizard.min.css">
+  <form-wizard :start-index="2" :title="''" :subtitle="''" color="#9bd358">
+     <tab-content title="Encaminhada" icon="fa fa-check"></tab-content>
+     <tab-content title="Aprovado GGP"icon="fa fa-check"></tab-content>
+     <tab-content title="Aprovado Gerente"icon="fa fa-check"></tab-content>
+     <tab-content title="Aprovado Diretor"icon="fa fa-check"></tab-content>
+     <tab-content title="Aprovado Superintendente"icon="fa fa-check"></tab-content>
+     <tab-content title="Aprovado Provedor"icon="fa fa-check"></tab-content>
+ </form-wizard>
 </div>
 </template>
