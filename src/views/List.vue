@@ -92,8 +92,8 @@ export default {
             <p>Sobre o componente de progresso</p>
             <button class="delete" @click="showInfo = false"></button>
           </div>
-          <div class="message-body">
-            Não consegui terminar o componente de progresso da forma correta, porém mantive o mesmo em exibição para visualização do que consegui fazer
+          <div class="message-body">Não consegui terminar o componente de progresso da forma correta, porém mantive o mesmo em exibição para visualização do que consegui fazer.
+            Ao clicar na setinha de algum registro, o componente aparece e some
           </div>
         </article>
       </div>

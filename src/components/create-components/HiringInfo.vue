@@ -140,7 +140,7 @@ export default {
                                 <div class="column">
                                     <div class="field">
                                         <label class="label required">Salário (R$):</label>
-                                        <vue-numeric v-bind:class="{'is-danger': !validInputs.salario}" required class="input" currency="R$" v-model="contratacaoFormularioModel.salario"></vue-numeric>
+                                        <vue-numeric v-bind:class="{'is-danger': !validInputs.salario}" required class="input" currency="R$" separator="." v-model="contratacaoFormularioModel.salario"></vue-numeric>
                                     </div>
                                     <div class="field">
                                         <label class="label required">Cargo:</label>
