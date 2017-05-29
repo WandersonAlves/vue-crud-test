@@ -53,6 +53,11 @@ export default {
   },
   components: {
     SolicitationProgress
+  },
+  computed: {
+    gridLenght() {
+      return this.tableData.length;
+    }
   }
 }
 </script>
@@ -62,7 +67,7 @@ export default {
       <table class="table is-striped">
         <thead>
           <tr>
-            <th class="is-3" v-for="header in tableHeader">
+            <th class="is-3 small" v-for="header in tableHeader">
               {{header.title}}
             </th>
             <th></th>
@@ -70,7 +75,7 @@ export default {
         </thead>
         <tbody>
           <tr v-for="row in tableData">
-              <td v-for="header in tableHeader">
+              <td class="small" v-for="header in tableHeader">
                   <span v-bind:class="{'tag': header.tag, 'is-success': row.status === 'Finalizada',
                                       'is-warning': row.status === 'Reprovada', 'is-info': row.status === 'Pendente Aprovação'}">
                       {{row[header.field]}}
@@ -87,6 +92,9 @@ export default {
         </tbody>
       </table>
     </div>
+    <p class="small padding-top-25">
+      {{gridLenght}} registros
+    </p>
     <div>
       <solicitation-progress :step="1" v-show="showProgress"></solicitation-progress>
     </div>

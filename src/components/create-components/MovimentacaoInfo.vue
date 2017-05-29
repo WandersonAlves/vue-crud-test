@@ -5,6 +5,7 @@
 <script>
 import Datepicker from 'vuejs-datepicker';
 import FormInfo from '../FormInfo.vue';
+import Grid from '../list-components/Grid.vue';
 
 export default {
     name: 'MovimentacaoInfo',
@@ -20,10 +21,28 @@ export default {
     },
     components: {
         Datepicker,
-        FormInfo
+        FormInfo,
+        Grid
     },
     data() {
-        return {}
+        return {
+          tableHeader: [
+            {
+              title: 'NÚMERO',
+              field: 'numero'
+            },
+            {
+              title: 'FUNCIONÁRIO',
+              field: 'funcionario'
+            }
+          ],
+          tableData: [
+            {
+              numero: 1,
+              funcionario: 'Wanderson'
+            }
+          ]
+        }
     }
 }
 
@@ -61,6 +80,25 @@ export default {
                                 </div>
                             </div>
                         </form>
+                        <br />
+                        <div class="overflow">
+                          <table class="table is-striped">
+                            <thead>
+                              <tr>
+                                <th class="is-3 small" v-for="header in tableHeader">
+                                  {{header.title}}
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="small" v-for="row in tableData">
+                                  <td v-for="header in tableHeader">
+                                          {{row[header.field]}}
+                                  </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                     </div>
                     <div class="column">
                         <form-info :textC="'Descreva de forma sucinta uma justificativa para a movimentação do colaborador'">
