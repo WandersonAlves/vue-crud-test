@@ -49,7 +49,8 @@ export default {
           field: 'solicitante'
         }
       ],
-      tableData: []
+      tableData: [],
+      showInfo: true
     }
   },
   components: {
@@ -82,6 +83,19 @@ export default {
             <span>NOVA</span>
           </a>
         </div>
+      </div>
+    </div>
+    <div class="columns" v-show="showInfo">
+      <div class="column">
+        <article class="message is-info">
+          <div class="message-header">
+            <p>Sobre o componente de progresso</p>
+            <button class="delete" @click="showInfo = false"></button>
+          </div>
+          <div class="message-body">
+            Não consegui terminar o componente de progresso da forma correta, porém mantive o mesmo em exibição para visualização do que consegui fazer
+          </div>
+        </article>
       </div>
     </div>
   </div>

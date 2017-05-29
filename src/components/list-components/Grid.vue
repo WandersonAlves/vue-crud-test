@@ -43,7 +43,9 @@ export default {
     }
   },
   data() {
-    return {}
+    return {
+      showProgress: true
+    }
   },
   methods: {
     expandItem() {
@@ -55,36 +57,38 @@ export default {
 }
 </script>
 <template>
-<div class="content-area overflow">
-<table class="table is-striped">
-  <thead>
-    <tr>
-      <th class="is-3" v-for="header in tableHeader">
-        {{header.title}}
-      </th>
-      <th>
-
-      </th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr v-for="row in tableData">
-        <td v-for="header in tableHeader">
-            <span v-bind:class="{'tag': header.tag, 'is-success': row.status === 'Nova',
-                                'is-warning': row.status === 'Reprovada', 'is-info': row.status === 'Pendente Aprovação'}">
-                {{row[header.field]}}
-            </span>
-        </td>
-        <td>
-          <span class="icon">
-            <i class="fa" aria-hidden="true"
-               @click="row.showProgress = !row.showProgress"
-               v-bind:class="{'fa-arrow-circle-up': row.showProgress, 'fa-arrow-circle-down': !row.showProgress}"></i>
-          </span>
-        </td>
-          <solicitation-progress :step="1" v-if="row.showProgress"></solicitation-progress>
-    </tr>
-  </tfoot>
-</table>
+  <div class="content-area">
+    <div class="overflow">
+      <table class="table is-striped">
+        <thead>
+          <tr>
+            <th class="is-3" v-for="header in tableHeader">
+              {{header.title}}
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="row in tableData">
+              <td v-for="header in tableHeader">
+                  <span v-bind:class="{'tag': header.tag, 'is-success': row.status === 'Nova',
+                                      'is-warning': row.status === 'Reprovada', 'is-info': row.status === 'Pendente Aprovação'}">
+                      {{row[header.field]}}
+                  </span>
+              </td>
+              <td>
+                <span class="icon">
+                  <i class="fa" aria-hidden="true"
+                     @click="row.showProgress = !row.showProgress; showProgress = !showProgress"
+                     v-bind:class="{'fa-arrow-circle-up': row.showProgress, 'fa-arrow-circle-down': !row.showProgress}"></i>
+                </span>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <solicitation-progress :step="1" v-show="showProgress"></solicitation-progress>
+    </div>
 </div>
 </template>
