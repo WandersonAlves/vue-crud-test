@@ -2,6 +2,8 @@
 
 > A vuejs CRUD UI test
 
+You can access the application here: (https://vue-crud-test.herokuapp.com)
+
 ## Build Setup
 
 ``` bash
