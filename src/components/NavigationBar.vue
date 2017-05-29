@@ -34,6 +34,12 @@
   left: 94%;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  .exit-show {left: 76%;}
+}
+@media screen and (max-width: 768px) {
+  .sidebar {width: 65% !important;}
+}
 
 .white {
     color: white;
@@ -68,7 +74,7 @@
 </style>
 
 <template>
-<div id="navigation-bar">
+<div id="navigation-bar" v-on-clickaway="hideMenus">
     <nav class="nav">
         <div class="nav-left">
             <a class="nav-item logo-bg">LOGO</a>
@@ -120,10 +126,12 @@
 <script>
 import Badge from './Badge.vue';
 import Route from '../router';
+import { mixin as clickaway } from 'vue-clickaway';
 
 export default {
     name: 'NavigationBar',
     props: ['user', 'notifications'],
+    mixins: [ clickaway ],
     components: {
         Badge: Badge
     },
@@ -134,6 +142,12 @@ export default {
             showSidebar: false,
             showExit: false
         }
+    },
+    methods: {
+      hideMenus() {
+        this.showSidebar = false;
+        this.showExit = false;
+      }
     }
 }
 </script>

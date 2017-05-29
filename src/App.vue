@@ -1,4 +1,5 @@
 <style>
+/*Common css for all application*/
 .content-area {
     margin: 70px 120px 0px 120px;
 }
@@ -32,15 +33,16 @@
   content: " *";
   color: red;
 }
-@media screen and (max-width: 768px) {
-  .content-area {margin: 20px;}
-}
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0
 }
+@media screen and (max-width: 768px) {
+  .content-area {margin: 20px;}
+}
+
 </style>
 <template>
   <div id="app">
