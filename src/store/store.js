@@ -8,6 +8,8 @@ Vue.use(Vuex);
 
 Moment.locale('pt-br');
 
+// NOTE: Lista de estados da aplicação
+// aqui fica todos os comportamentos iniciais e ou dados que precisem trafegar entre componentes
 const state = {
   index: 0,
   movimentacoes: [],
@@ -41,7 +43,7 @@ const state = {
     }
   }
 };
-
+// NOTE: Mutacões são a unica forma de alterar os estados
 const mutations = {
   ADD_MOVIMENTACOES (state, movimentacao) {
     let textArray = ['Finalizada', 'Reprovada', 'Pendente Aprovação'];
@@ -55,7 +57,7 @@ const mutations = {
     state.index++;
   }
 };
-
+// NOTE: Getters são as unicas formas de recuperar estados
 const getters = {
   getMovimetacaoes: state => {
     let movimentacoes = [];
@@ -87,7 +89,7 @@ const getters = {
     return movimentacoes;
   }
 }
-
+// NOTE: Actions iniciam mutações e permitem o chamado 'Time Travel Debugging'
 const actions = {
   addMovimentacao
 }

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-
+// NOTE: Factory usada para validar os campos da primeira tela e permitir ou não o progresso
 export const Factory = {
   checkIfValid(commitObject, validInputs) {
     let abort = false;

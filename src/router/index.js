@@ -4,7 +4,7 @@ import Create from '../views/Create.vue';
 import List from '../views/List.vue';
 
 Vue.use(Router);
-
+// NOTE: Arquivo de rotas da aplicação. Bem mais simples se comparado com o Angular
 export default new Router({
   base: '',
   routes: [

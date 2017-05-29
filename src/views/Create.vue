@@ -63,9 +63,6 @@ import Store from '../store/store';
 import Route from '../router';
 import { Factory } from '../utils/factory'
 import { formOptions, dataModels } from '../store/constants';
-import Vue from 'vue';
-
-const bus = new Vue();
 
 export default {
     name: 'Create',
@@ -116,15 +113,18 @@ export default {
                 justificativaModel: dataModels.justificativaModel,
                 movimentacaoModel: dataModels.movimentacaoModel,
             };
+            // NOTE: Associação por desconstrução do ES6
             [this.validInputs, abort] = Factory.checkIfValid(commitObject, this.validInputs);
 
             if (abort) {
                 alert('Faltando preencher campos');
                 return;
             }
-
+            // NOTE: Adiciona a movimentação
             Store.commit("ADD_MOVIMENTACOES", commitObject);
+            // NOTE: Atualiza o indice
             Store.commit("INCREMENT");
+            // NOTE: Vai para a tela de listagem
             Route.push({name: 'list'});
         }
     }

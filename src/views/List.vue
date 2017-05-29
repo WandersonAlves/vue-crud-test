@@ -65,6 +65,7 @@ export default {
     }
   },
   mounted() {
+    // NOTE: Pega do store as movimentações criadas
     this.tableData = Store.getters.getMovimetacaoes;
   }
 }

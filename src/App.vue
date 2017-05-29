@@ -55,6 +55,7 @@
 </template>
 
 <script>
+// NOTE: Esse é o componente root do projeto, é daqui que tudo começa
 import styles from './assets/scss/main.sass';
 import NavigationBar from './components/NavigationBar.vue';
 import GreyFooter from './components/Footer.vue';
