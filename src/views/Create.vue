@@ -59,8 +59,6 @@ import HiringInfo from '../components/create-components/HiringInfo.vue';
 import HiringInfoTwo from '../components/create-components/HiringInfoTwo.vue';
 import JustificativaInfo from '../components/create-components/JustificativaInfo.vue';
 import MovimentacaoInfo from '../components/create-components/MovimentacaoInfo.vue';
-import Store from '../store/store';
-import Route from '../router';
 import { Factory } from '../utils/factory'
 import { formOptions, dataModels } from '../store/constants';
 
@@ -121,11 +119,13 @@ export default {
                 return;
             }
             // NOTE: Adiciona a movimentação
-            Store.commit("ADD_MOVIMENTACOES", commitObject);
+            this.$store.commit("ADD_MOVIMENTACOES", commitObject);
             // NOTE: Atualiza o indice
-            Store.commit("INCREMENT");
+            this.$store.commit("INCREMENT");
             // NOTE: Vai para a tela de listagem
-            Route.push({name: 'list'});
+            // FIXME: push isn't a method
+            debugger
+            this.$router.push({name: 'list'});
         }
     }
 }
