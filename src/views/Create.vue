@@ -123,8 +123,6 @@ export default {
             // NOTE: Atualiza o indice
             this.$store.commit("INCREMENT");
             // NOTE: Vai para a tela de listagem
-            // FIXME: push isn't a method
-            debugger
             this.$router.push({name: 'list'});
         }
     }

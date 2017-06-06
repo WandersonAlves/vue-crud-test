@@ -96,7 +96,7 @@ export default {
       {{gridLenght}} registros
     </p>
     <transition name="fade">
-      <solicitation-progress :step="1" hide-buttons="true" v-show="showProgress"></solicitation-progress>
+      <solicitation-progress :step="1" v-show="showProgress"></solicitation-progress>
     </transition>
 </div>
 </template>

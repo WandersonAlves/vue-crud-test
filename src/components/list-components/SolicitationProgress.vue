@@ -46,7 +46,7 @@ export default {
 <template>
 <div id="progress">
   <link rel="stylesheet" href="vue-form-wizard.min.css">
-  <form-wizard :start-index="2" :title="''" :subtitle="''" color="#9bd358">
+  <form-wizard :start-index="2" :title="''" :hide-buttons="true" :subtitle="''" color="#9bd358">
      <tab-content title="Encaminhada" icon="fa fa-check"></tab-content>
      <tab-content title="Aprovado GGP"icon="fa fa-check"></tab-content>
      <tab-content title="Aprovado Gerente"icon="fa fa-check"></tab-content>
