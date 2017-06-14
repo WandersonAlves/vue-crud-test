@@ -46,7 +46,7 @@
 </style>
 <template>
   <div id="app">
-    <navigation-bar :user="user" :notifications="notifications"></navigation-bar>
+    <navigation-bar user="user" :notifications="notifications"></navigation-bar>
     <transition name="fade">
         <router-view></router-view>
     </transition>

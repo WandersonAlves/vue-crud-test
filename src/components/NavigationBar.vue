@@ -125,7 +125,6 @@
 
 <script>
 import Badge from './Badge.vue';
-import Route from '../router';
 import { mixin as clickaway } from 'vue-clickaway';
 
 export default {

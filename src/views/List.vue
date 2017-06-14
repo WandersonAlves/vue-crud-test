@@ -2,8 +2,8 @@
 
 </style>
 <script>
-import SearchFields from '../components/list-components/SearchFields.vue';
-import Grid from '../components/list-components/Grid.vue';
+import SearchFields from '../components/SearchFields.vue';
+import Grid from '../components/Grid.vue';
 import { searchOptions } from '../store/constants';
 
 export default {

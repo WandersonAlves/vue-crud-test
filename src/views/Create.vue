@@ -245,16 +245,12 @@
                     <table class="table is-striped">
                         <thead>
                             <tr>
-                                <th class="is-3 small" v-for="header in tableHeader">
-                                  {{header.title}}
-                                </th>
+                                <th class="is-3 small" v-for="header in tableHeader">{{header.title}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="small" v-for="row in tableData">
-                              <td v-for="header in tableHeader">
-                                      {{row[header.field]}}
-                              </td>
+                              <td v-for="header in tableHeader">{{row[header.field]}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -273,7 +269,7 @@
 
 <script>
 import Datepicker from 'vuejs-datepicker';
-import BasicInfo from '../components/create-components/BasicInfo.vue';
+import BasicInfo from '../components/BasicInfo.vue';
 import VueNumeric from 'vue-numeric';
 import { Factory } from '../utils/factory'
 import { formOptions, dataModels, validInputs, tableHeader, tableData } from '../store/constants';
