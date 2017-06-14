@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     createNewMovimentacao() {
-      this.$route.push({
+      this.$router.push({
         name: 'create'
       });
     }

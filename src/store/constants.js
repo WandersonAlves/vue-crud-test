@@ -1,16 +1,15 @@
-const tipoOptions = [
+const tipoOptions = [{
+    text: 'Movimentação',
+    value: 1
+  },
   {
-      text: 'Movimentação',
-      value: 1
-    },
-    {
-      text: 'Desligamento',
-      value: 2
-    },
-    {
-      text: 'Contratação',
-      value: 3
-    }
+    text: 'Desligamento',
+    value: 2
+  },
+  {
+    text: 'Contratação',
+    value: 3
+  }
 ];
 export const formOptions = {
   tipoFormularioOptions: tipoOptions,
@@ -153,3 +152,33 @@ export const searchOptions = {
     }
   ]
 }
+
+export const validInputs = {
+  tipoFormulario: true,
+  dataMovimentacao: true,
+  dataAdmissao: true,
+  unidade: true,
+  salario: true,
+  setor: true,
+  cargo: true,
+  coordenacao: true,
+  gerencia: true,
+  motivoSubstituicao: true,
+  regimeTrabalho: true,
+  cargaHoraria: true,
+  requisitos: true,
+  justificativa: true
+}
+export const tableHeader = [{
+    title: 'NÚMERO',
+    field: 'numero'
+  },
+  {
+    title: 'FUNCIONÁRIO',
+    field: 'funcionario'
+  }
+]
+export const tableData = [{
+  numero: 1,
+  funcionario: 'Wanderson'
+}]
