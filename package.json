@@ -8,7 +8,8 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "start": "node server.js",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "test": "karma start --single-run --browsers PhantomJS"
   },
   "dependencies": {
     "babel-core": "^6.0.0",
@@ -37,5 +38,17 @@
     "vuex": "^2.3.1",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-google": "^0.8.0",
+    "jasmine-core": "^2.6.4",
+    "karma": "^1.7.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-spec-reporter": "0.0.31",
+    "karma-webpack": "^2.0.3",
+    "phantomjs": "^2.1.7"
   }
 }
