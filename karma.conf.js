@@ -31,9 +31,9 @@ module.exports = function (config) {
     singleRun: true,
     reporters: ['coverage', 'spec'],
 		coverageReporter: {
-			type: "lcov",
-			dir: "reports",
-			subdir: "coverage",
+      reporters: [
+        { type: 'lcov', dir: 'reports', subdir: 'covarage' }
+      ],
 			check: {
 				global: {
 					statements: 75,
@@ -48,7 +48,7 @@ module.exports = function (config) {
 			suppressFailed: false,
 			suppressPassed: false,
 			suppressSkipped: false
-		},
+		}
 		// plugins: [
 		// 	"karma-coverage",
 		// 	"karma-spec-reporter",
