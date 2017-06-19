@@ -25,7 +25,7 @@ module.exports = function(config) {
       reporters: [{
         type: 'lcov',
         dir: 'reports',
-        subdir: 'covarage'
+        subdir: 'coverage'
       }],
       check: {
         global: {

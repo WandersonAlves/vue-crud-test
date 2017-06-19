@@ -1,4 +1,4 @@
-var App = require('../src/App.vue');
+import App from '../src/App.vue';
 
 describe('Main App', function () {
 
