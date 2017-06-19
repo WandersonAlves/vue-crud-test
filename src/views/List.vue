@@ -2,10 +2,8 @@
 
 </style>
 <script>
-import Route from '../router';
-import Store from '../store/store';
-import SearchFields from '../components/list-components/SearchFields.vue';
-import Grid from '../components/list-components/Grid.vue';
+import SearchFields from '../components/SearchFields.vue';
+import Grid from '../components/Grid.vue';
 import { searchOptions } from '../store/constants';
 
 export default {
@@ -59,14 +57,14 @@ export default {
   },
   methods: {
     createNewMovimentacao() {
-      Route.push({
+      this.$router.push({
         name: 'create'
       });
     }
   },
   mounted() {
     // NOTE: Pega do store as movimentações criadas
-    this.tableData = Store.getters.getMovimetacaoes;
+    this.tableData = this.$store.getters.getMovimetacaoes;
   }
 }
 </script>

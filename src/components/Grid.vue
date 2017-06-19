@@ -26,9 +26,6 @@ td:first-child {
 .overflow {
   overflow: auto;
 }
-.wizard-card-footer {
-  display: none !important;
-}
 </style>
 <script>
 import SolicitationProgress from './SolicitationProgress.vue';

@@ -46,7 +46,7 @@
 </style>
 <template>
   <div id="app">
-    <navigation-bar :user="user" :notifications="notifications"></navigation-bar>
+    <navigation-bar user="user" :notifications="notifications"></navigation-bar>
     <transition name="fade">
         <router-view></router-view>
     </transition>
@@ -56,7 +56,7 @@
 
 <script>
 // NOTE: Esse é o componente root do projeto, é daqui que tudo começa
-import styles from './assets/scss/main.sass';
+import Styles from './assets/scss/main.sass';
 import NavigationBar from './components/NavigationBar.vue';
 import GreyFooter from './components/Footer.vue';
 
