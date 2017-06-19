@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "start": "node server.js",
     "postinstall": "npm run build",
-    "test": "karma start --single-run --browsers PhantomJS"
+    "test": "cross-env BABEL_ENV=test karma start tests/karma.conf.js --single-run --browsers PhantomJS"
   },
   "dependencies": {
     "babel-core": "^6.0.0",
@@ -40,6 +40,11 @@
     "webpack-dev-server": "^2.2.0"
   },
   "devDependencies": {
+    "babel-plugin-istanbul": "^4.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-stage-2": "^6.24.1",
+    "es6-promise": "^4.1.0",
     "eslint": "^4.0.0",
     "eslint-config-google": "^0.8.0",
     "jasmine-core": "^2.6.4",
@@ -47,6 +52,7 @@
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4",
+    "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.31",
     "karma-webpack": "^2.0.3",
     "phantomjs": "^2.1.7"

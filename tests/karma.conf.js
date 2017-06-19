@@ -1,4 +1,4 @@
-var webpackConfig = require('./webpack.config.js');
+var webpackConfig = require('../webpack.config.js');
 delete webpackConfig.entry;
 
 module.exports = function(config) {
@@ -7,12 +7,9 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
-    files: [
-      'tests/**/*.spec.js'
-    ],
+    files: ['../node_modules/es6-promise/dist/es6-promise.auto.js','./index.js'],
     preprocessors: {
-      'src/**/*.(js|vue)': ['coverage'],
-      'tests/**/*.spec.js': ['webpack']
+      './index.js': ['webpack', 'sourcemap']
     },
     webpack: webpackConfig,
     webpackMiddleware: {
@@ -24,8 +21,10 @@ module.exports = function(config) {
     coverageReporter: {
       reporters: [{
         type: 'lcov',
-        dir: 'reports',
+        dir: '../reports',
         subdir: 'coverage'
+      }, {
+        type: 'text-summary'
       }],
       check: {
         global: {
