@@ -38,15 +38,15 @@
     "vuestrap": "^1.0.3",
     "vuex": "^2.3.1",
     "webpack": "^2.2.0",
-    "webpack-dev-server": "^2.2.0"
-  },
-  "devDependencies": {
+    "webpack-dev-server": "^2.2.0",
     "babel-plugin-istanbul": "^4.1.4",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-stage-2": "^6.24.1",
     "es6-promise": "^4.1.0",
-    "eslint": "^4.0.0",
+    "eslint": "^4.0.0"
+  },
+  "devDependencies": {
     "eslint-config-google": "^0.8.0",
     "jasmine-core": "^2.6.4",
     "karma": "^1.7.0",
